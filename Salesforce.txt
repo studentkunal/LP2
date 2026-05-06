@@ -1,0 +1,31 @@
+public class SelectionSort {
+
+    public static List<Integer> selectionSort(List<Integer> inputList) {
+        Integer n = inputList.size();
+
+        for (Integer i = 0; i < n - 1; i++) {
+            Integer minIndex = i;
+
+            for (Integer j = i + 1; j < n; j++) {
+                if (inputList[j] < inputList[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            if (minIndex != i) {
+                Integer temp = inputList[i];
+                inputList[i] = inputList[minIndex];
+                inputList[minIndex] = temp;
+            }
+        }
+        return inputList;
+    }
+}
+
+"""
+List<Integer> numbers = new List<Integer>{64, 25, 12, 22, 11};
+
+List<Integer> result = SelectionSort.selectionSort(numbers);
+
+System.debug(result);
+"""
